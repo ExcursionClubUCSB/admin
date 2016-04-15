@@ -1,0 +1,195 @@
+
+photo-uploader {
+	
+	block / .photo-upload {
+		/ -modal {
+			position: fixed;
+
+			top: 0;
+			left: 0;
+			z-index: 1096;
+
+
+			/ img {
+				width: 90%;
+				height: 90%;
+
+				margin-left: 5%;
+				margin-top: 5%;
+			}
+
+			/ -label {
+				position: absolute;
+				display: block;
+
+				top: 20%;
+				left: 50%;
+
+				margin-left: -200px;
+				width: 400px;
+
+				color: white;
+				background-color: rgba(0,0,0,0.8);
+				border: 8px solid rgba(0,0,0,0.1);
+				text-align: center;
+
+				border-radius: 12px;
+
+				/ span {
+					display: inline-block;
+					margin: 10px 0;
+				}
+
+				/ button {
+					display: inline-block;
+					border: 2px outset black;
+					font-size: 14px;
+					font-weight: bold;
+					margin: 0 12px;
+					cursor: pointer;
+				}
+
+				/ input {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					width: 85%;
+					font-size: 18px;
+				}
+			}
+
+			/ -progress {
+			    position: absolute;
+			    width: 360px;
+			    height: 60px;
+
+			    left: 50%;
+			    top: 5%;
+
+			    margin-left: -180px;
+			    text-align: center;
+
+			    border-radius: 0 8px 8px 8px;
+
+			    background-color: rgba(64, 0, 0, 0.5);
+			    border: 1px solid rgba(255, 255, 0, 0.6);
+
+			    / .waiting-caption {
+				    background-color: rgba(0, 52, 0, 0.5);
+				    border-color: rgba(0, 246, 0, 0.6);
+			    }
+
+			    / :after {
+			    	color: white;
+			    }
+
+			    / .busy-thumbnailing:after {
+			    	content: "generating thumbnail...";
+			    }
+
+			    / .busy-uploading:after {
+			    	content: "uploading...";
+			    }
+
+			    / .waiting-caption:after {
+			    	content: "waiting for label";
+			    }
+
+			    / button {
+			        background-color: red;
+				    border: 2px solid black;
+				    display: block;
+				    font-size: 13px;
+				    cursor: pointer;
+			    }
+			}
+		}
+
+	}
+
+}
+
+photo-picker {
+
+	block / .gear-photo-picker {
+		display: table;
+		position: absolute;
+		border-spacing: 50px 0;
+		border-radius: 36px;
+		background-color: rgba(0,0,0,0.68);
+		
+		width: 960px;
+		
+		left: 35px;
+		
+		color: white;
+		margin-top: 35px;
+		
+		/ -row {
+			display: table-row;
+			position: relative;
+		}
+		
+		/ -item {
+			display: table-cell;
+			cursor: pointer;
+			border: 2px solid transparent;
+			text-align: center;
+			padding: 18px 2px;
+			
+			/ img {
+				border-radius: 12px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			/ :hover {
+				border-color: yellow;
+			}
+			
+			/ span {
+				display: table-caption;
+				position: relative;
+				
+				width: 100%;
+			}
+
+			/ .new {
+
+				/ input[type="file"] {
+					display: block;
+					width: 0;
+					height: 0;
+				}
+			}
+		}
+
+		/ -exit {
+			position: absolute;
+
+			top: 0;
+			left: 0;
+
+		    width: 45px;
+		    height: 45px;
+
+		    margin-left: -12px;
+		    margin-top: -15px;
+
+		    color: black;
+		    background-color: rgba(230, 18, 24, 0.7);
+
+		    border: 2px solid red;
+		    border-radius: 17em;
+
+		    font-family: Tahoma;
+		    font-size: 20px;
+		    font-weight: bold;
+
+		    cursor: pointer;
+		}
+	}
+
+}

@@ -1,0 +1,51 @@
+/
+	:node(test.js)
+
+	bess
+		../package/bess
+		*.bess
+
+	css
+		../package/css
+		*.css
+
+	js
+		../package/js
+			:merge
+		gear*
+		user*
+		photo*
+		service*
+		util*
+		thumbnail.js
+		doc.ready.js
+
+	html
+		:title
+			Admin Panel - Excursion Club
+		admin-open.html
+		gear.html
+		user.html
+		services.html
+		admin-close.html
+
+
+/js/*			:static
+
+/resource/*		:static
+
+/get/*			:static
+
+/photos/*		:static(../photos)
+
+/images/* 		:static(../package/images)
+
+/db/*			:rodb(new_excursion)
+
+. /^\/data\/([a-z]+)\/([a-z]+)$/i
+	:node(../database/handler.js)
+
+. /^\/upload\/([a-z]+)$/
+	:node(./upload/$1.js)
+
+/auth/*			:warp(../auth)

@@ -1,0 +1,291 @@
+
+/ #gear-add_new {
+	background-color: #ffffe6;
+	height: 80%;
+}
+
+/ .new_gear {
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	
+	navbar / -navbar {
+		position: relative;
+		width: 250px;
+		height: auto;
+		
+		color: navy;
+		font-size: 17px;
+		background-color: #999;
+		
+		/ -container {
+			position: absolute;
+			height: 100%;
+			overflow-y: scroll;
+			border-style: ridge;
+			border-color: #000;
+			border-width: 3px 1px 2px 2px;
+			z-index: 64;
+		}
+		
+		/ -menu {
+			
+			/ >span {
+				display: block;
+				color: black;
+				font-weight: bold;
+				background-color: #778;
+				cursor: pointer;
+				padding: 6px 12px;
+				border-bottom: 2px outset grey;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+			}
+			
+			/ .shown>span {
+				color: darkblue;
+			}
+		
+			/ -item {
+				display: none;
+				cursor: pointer;
+				padding: 20px 22px;
+				border-bottom: 2px groove grey;
+				
+				/ :hover {
+					background-color: #9cc;
+				}
+			}
+			
+			/ .shown>div {
+				display: block;
+			}
+
+			/ :not(.shown)>span:hover {
+				background-color: #bbc;
+			}
+		}
+	}
+	
+	/ -form {
+		position: relative;
+		width: auto;
+		top: 0;
+		
+		margin-left: ($navbar.width + 16);
+		margin-right: 16px;
+		margin-bottom: 25%;
+		padding-top: 0;
+		padding-left: 20px;
+		
+		/ -container {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow-y: scroll;
+			z-index: 60;
+		}
+	}
+	
+}
+
+/ .gear-edit-form {
+	/ -input {
+		width: 320px;
+		
+		padding-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+		
+		border-style: solid;
+		border-width: 1px;
+		border-color: transparent transparent #ddd;
+		
+		/ .img {
+			position: absolute;
+			width: 100px;
+			heght: 100px;
+			top: 90px;
+			right: 0;
+			
+			/ .focus {
+				background-color: #ddf;
+				border: 1px solid #f00;
+			}
+			
+			/ >button {
+				width: 100px;
+				height: 100px;
+				background-image: url("resource/unknown.png");
+				cursor: pointer;
+				border-radius: 18px;
+			}
+		}
+		
+		/ :hover {
+			border-color: #66c;
+		}
+		
+		/ .valid:hover {
+			border-color: transparent transparent #2d2;
+		}
+	
+		/ >div {
+			padding-top: 18px;
+			padding-bottom: 6px;
+		}
+		/ >input[type="text"] {
+			font-size: 20px;
+			padding: 8px;
+			
+			/ :enabled:focus {
+				background-color: #ddf;
+				border: 1px solid #f00;
+			}
+
+			border: 1px inset #777;
+		}
+		
+		/ >select {
+			padding: 12px 12px 2px;
+			width: 220px;
+			text-align: center;
+			font-size: 14pt;
+			border-width: 1px;
+			
+			/ >option {
+				padding: 6px 0;
+			}
+			
+			/ :enabled:focus {
+				background-color: #ddf;
+				border: 1px solid #f00;
+			}
+		}
+		
+		/ .valid {
+			/ >input[type="text"] {
+				background-color: #9f9;
+				
+				/ [disabled] {
+					background-color: #9d9;
+				}
+			}
+			
+			/ select {
+				background-color: #9f9;
+			}
+			
+			/ .img {
+				background-color: #9f9;
+			}
+		}
+		
+		/ .invalid {
+			border-color: red;
+			
+			/ >input[type="text"] {
+				background-color: #f99;
+			}
+			
+			/ select {
+				background-color: #f99;
+			}
+		}
+	}
+}
+
+/ div.input-help {
+	background-color: #ff9;
+	padding: 12px 20px;
+	margin-top: 6px;
+	font-size: 11pt;
+	font-style: italic;
+	border: 1px outset black;
+	border-radius: 4px;
+}
+
+/ .gear-edit-form-button {
+	position: absolute;
+	
+	/ >button {
+		background-color: #ddd;
+		border-width: 2px;
+		border-style: solid;
+		border-color: grey;
+		font-family: helvetica;
+
+		cursor: pointer;
+	}
+
+	/ .reset {
+		bottom: 0px;
+		right: 0;
+
+		z-index: 100;
+
+		/ >button {
+			width: 120px;
+			height: 30px;
+			font-size: 12pt;
+		}
+	}
+
+	/ .save {
+		top: 0;
+		right: 0;
+
+		z-index: 120;
+
+		/ >button {
+			width: 120px;
+			height: 50px;
+			font-size: 14pt;
+
+			/ :after {
+				content: "...";
+			}
+		}
+
+		/ .valid {
+			 / >button {
+			 	color: darkblue;
+				background-color: #2bf;
+				border-color: black;
+			 }
+		}
+		/ .busy {
+			 / >button {
+				background-color: #bf0;
+				border-color: black;
+			 }
+		}
+		
+		/ .valid>button:after {
+			content: "submit";
+		}
+		/ .busy>button:after {
+			content: "uploading...";
+		}
+	}
+}
+
+selected {
+	shadow: 0 0 16px #555 inset;
+	
+	/ .selected-item {
+		background-color: #8aa;
+		-moz-box-shadow:    $shadow;
+		-webkit-box-shadow: $shadow;
+		box-shadow:         $shadow;
+	}
+}
+
+/ .text-align-right {
+	text-align: right;
+}
+
+/ .input-suffix {
+	padding-left: 2px;
+}

@@ -1,0 +1,8 @@
+
+.theme-grass-gradient {
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #9FEF7C 100%);
+
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #9FEF7C));
+	
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #9FEF7C 100%);
+}

@@ -1,0 +1,53 @@
+
+/ .scrollable_list {
+	width: 95%;
+	height: 78%;
+	overflow-y: scroll;
+}
+
+/ .user_info {
+	/ -row {
+
+		/ [data-status="banned"] {
+			background-color: red !important;
+			color: white;
+		}
+
+		/ [data-status="suspended"] {
+			background-color: yellow !important;
+		}
+
+		/ [data-status="active"]:hover {
+			background-color: lightgreen !important;
+		}
+
+		/ :hover {
+			background-color: lightsteelblue !important;
+		}
+
+		/ :nth-child(odd) {
+			background-color: #eee;
+
+			/ [data-status="active"] {
+				background-color: #eeffee;
+			}
+
+			/ [data-type="staff"] {
+				color: navy;
+			}
+		}
+
+		/ :nth-child(even) {
+			background-color: #ddd;
+
+			/ [data-status="active"] {
+				background-color: #ddf8dd;
+			}
+
+			/ [data-type="staff"] {
+				color: navy;
+			}
+		}
+
+	}
+}
